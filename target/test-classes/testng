@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SauceDemo Test Suite" parallel="tests" thread-count="3">
+
+    <listeners>
+        <listener class-name="com.saucedemo.listeners.TestListener"/>
+    </listeners>
+
+    <!-- Chrome Tests -->
+    <test name="Chrome Tests">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.saucedemo.tests.AllTestsSuite"/>
+            <class name="com.saucedemo.tests.LoginTests"/>
+            <class name="com.saucedemo.tests.InventoryTests"/>
+            <class name="com.saucedemo.tests.CheckoutTests"/>
+            <class name="com.saucedemo.tests.SmokeTests"/>
+            <class name="com.saucedemo.tests.RegressionTests"/>
+            <class name="com.saucedemo.tests.DataDrivenTests"/>
+        </classes>
+    </test>
+
+    <!-- Firefox Tests -->
+    <test name="Firefox Tests">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="com.saucedemo.tests.AllTestsSuite"/>
+            <class name="com.saucedemo.tests.SmokeTests"/>
+            <class name="com.saucedemo.tests.RegressionTests"/>
+        </classes>
+    </test>
+
+    <!-- Edge Tests -->
+    <test name="Edge Tests">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name="com.saucedemo.tests.AllTestsSuite"/>
+            <class name="com.saucedemo.tests.SmokeTests"/>
+        </classes>
+    </test>
+
+</suite>
